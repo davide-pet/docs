@@ -15,6 +15,7 @@
       "to": "#89a2ff"
     }
   },
+
   "topbarCtaButton": {
     "name": "Dashboard",
     "url": "https://customersupportagent.app.orygo.ai/home"
@@ -29,6 +30,11 @@
       "name": "Product Updates",
       "icon": "newspaper",
       "url": "https://orygoai.substack.com/"
+    },
+    {
+      "name": "Help? engineers@orygo.ai",
+      "icon": "question",
+      "url": "mailto:engineers@orygo.ai"
     }
   ],
   "navigation": [
