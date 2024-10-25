@@ -60,6 +60,7 @@
     {
       "group": "Essentials",
       "pages": [
+        "integrations/sharepoint-integration",
         "essentials/markdown",
         "essentials/code",
         "essentials/images",

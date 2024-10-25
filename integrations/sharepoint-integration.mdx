@@ -1,0 +1,76 @@
+---
+title: SharePoint Integration
+description: This guide will walk you through the process of setting up a SharePoint integration app in Microsoft Azure, connecting OrygoAI to SharePoint and start loading your SharePoint Folders in your Agents
+---
+<span style={{ fontStyle: 'italic' }}>Time required for this integration: 10 min</span>
+
+
+## Step 1: Create the App on Microsoft Azure
+
+1. **Go to the Azure Portal**  
+   Navigate to the [Azure Portal](https://portal.azure.com/?quickstart=true#home).
+
+2. **Search for App Registrations**  
+   Use the search bar at the top of the page to find and select **App Registrations**.
+
+3. **Create a New App Registration**  
+   - Click on **New Registration**.  
+   - Provide a name for the app.  
+     Example: **SharePoint Integration App**.
+   - Copy the app tenand_id and client_id from the App homepage
+
+4. **Generate a Client Secret**  
+   - In the left-hand menu under **Manage**, go to **Certificates & Secrets**.
+   - Click on **New client secret**.  
+   - Add a description (e.g., "SharePoint App Secret").
+   - Set the expiration date and click **Add**.  
+     **Note:** Make sure to copy and save the client secret, as it will not be displayed again.
+
+     ![Generate new client secret](/images/sharepoint-integration/certificates.png)
+     
+     ![Retrieve client secret](/images/sharepoint-integration/retrieve_client_secret.png)
+
+5. **Configure API Permissions**  
+   - Under **Manage**, go to **API Permissions**.  
+   - Click on **Add a permission** and select **Microsoft Graph**.  
+   - Choose **Application permissions**.  
+   - Search for and select the following permissions:
+     - `Files.Read.All`
+     - `Sites.Read.All`
+   - Click **Add permissions**.
+
+   ![Add permissions](images/sharepoint-integration/permissions.png)
+
+6. **Grant Admin Consent**  
+   Ensure the user performing these steps has admin privileges. Grant admin consent for the app by clicking on **Grant admin consent** for the necessary permissions.
+
+    ![Add admin consent](/images/sharepoint-integration/admin_consent.png)
+
+## Step 2: Set Up SharePoint Integration on OrygoAI
+
+1. **Access the OrygoAI Control Panel**  
+   - Navigate to the [OrygoAI Control Panel](https://customersupportagent.app.orygo.ai/home).
+   - Go to the **Integration** section.
+   - Select **SharePoint Integration**.
+
+2. **Connect OrygoAI to Your SharePoint Site**  
+   To connect OrygoAI to your SharePoint site, enter the APP credentials (client_id, tenant_id and client_secret) as well as the site name and site hostname for the SharePoint you want to connect:
+
+   ```bash
+    TENANT_ID='example-tenant-id-1234567890'
+    CLIENT_ID='example-client-id-1234567890'
+    CLIENT_SECRET='example-client-secret-abc123'
+    SHAREPOINT_SITE_HOSTNAME='example.sharepoint.com'
+    SHAREPOINT_SITE_NAME='example-site-name'
+    ```
+
+    ![Add integration on OrygoAI](/images/sharepoint-integration/integration.png)
+
+## Step 3: Upload SharePoint Folders to Your AI Agent's Knowledge Base
+    Once the SharePoint integration is active, follow these steps to upload SharePoint folders into your AI Agents’ knowledge base:
+
+    - Go to the Knowledge Base section of the OrygoAI Control Panel.
+    - Select SharePoint as the source.
+    - Add the URL(s) of your SharePoint folders into the uploader to import them into your AI Agent’s knowledge base.
+
+    ![Load sharepoint folder](/images/sharepoint-integration/loader.png)
