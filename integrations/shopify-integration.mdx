@@ -1,0 +1,75 @@
+---
+title: Shopify Integration
+description: This guide will walk you through the process of setting up a Shopify integration on OrygoAI. This includes creating a Shopify Custom App to generate API credentials, integrating OrygoAI with Shopify, and enabling your AI Agents to autonomously complete tasks requiring API calls to your Shopify store.
+---
+
+<span style={{ fontStyle: 'italic' }}>Time required for this integration: 10 min</span>
+
+## Step 1: Create a Shopify App to Generate API Credentials
+
+1. **Create a New App in Shopify**  
+   - Go to your Shopify Admin, navigate to **Settings > Apps and Sales Channels**, then select **Develop Apps**.
+   - Click on **Allow custom app development**.
+   - Click on **Create App** and name it **OrygoAI** for easy identification.
+   
+   ![Click Develop Apps](/images/shopify-integration/1.%20click_develop_apps.png)
+   
+   ![Create App](/images/shopify-integration/2.%20create%20app.png)
+
+2. **Configure API Access Scopes**  
+   - Go to **API credentials** and select **Configure Admin API scopes**.
+   - Choose the permissions you want your AI agent to have. For example, select **read_orders** if you want your AI Agent to access order details.  
+   - For general setup, selecting all "read" options provides comprehensive access to store information.
+   - If unsure about the necessary permissions, reach out to us at engineers@orygo.ai.
+   - Click **Save** once you've configured the scopes.
+
+   ![API Credentials](/images/shopify-integration/3.%20click%20api%20credentials.png)
+
+   ![Configure API Scope](/images/shopify-integration/4.%20configure%20api%20scope.png)
+
+3. **Install the App and Obtain API Credentials**  
+   - Go back to **API credentials** and click on **Install App**.
+   - After installation, you will find the necessary credentials:
+     - **API Key**
+     - **API Secret Key**
+     - **API Access Token**
+   
+   ![Install App](/images/shopify-integration/6.%20install%20app.png)
+
+   ![Install App](/images/shopify-integration/5.%20api%20credentials.png)
+
+## Step 2: Set Up Shopify Integration on OrygoAI
+
+1. **Access the OrygoAI Control Panel**  
+   - Navigate to the [OrygoAI Control Panel](https://customersupportagent.app.orygo.ai/home).
+   - Go to the **Integration** section.
+   - Select **Shopify Integration**.
+
+   ![Install App](/images/shopify-integration/7.%20shopify%20integration.png)
+
+2. **Connect OrygoAI to Your Shopify Store**  
+   - In the integration setup, enter the following Shopify app credentials you generated:
+     - **API Key**
+     - **API Client Secret**
+     - **API Auth Token**
+     - **Shopify Store Domain** (Format: `https://your-store-name.myshopify.com`)
+   - Your store domain can be found in **Settings > Domains** in Shopify.
+
+   ![Install App](/images/shopify-integration/8.%20shopify%20domain.png)
+
+   ```bash
+   SHOPIFY_STORE_DOMAIN='https://orygoai-online-store.myshopify.com'
+   SHOPIFY_API_KEY='example-api_key-1234567890'
+   SHOPIFY_API_CLIENT_SECRET='example-api_client_secret-1234567890'
+   SHOPIFY_API_AUTH_TOKEN='example-auth_token-abc123'
+   ```
+
+## Step 3: Enable API Requests in Your AI Agent's Tasks
+
+Once the Shopify integration is active, you can set up tasks for your AI Agents that require Shopify API interactions.
+
+   - Go to the **Tasks** section and create a new task or select an existing tasks
+   - Select **Shopify** from the API integration dropdown.
+   - Add the API request details in simple, natural language. For example, you can create a task that enables your AI Agent to retrieve and provide customers with order tracking links.
+
+   ![Install App](/images/shopify-integration/9.%20task%20integration.png)

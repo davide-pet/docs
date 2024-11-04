@@ -41,7 +41,8 @@
     {
       "group": "Essentials",
       "pages": [
-        "integrations/sharepoint-integration"
+        "integrations/sharepoint-integration",
+        "integrations/shopify-integration"
       ]
     }
   ],
